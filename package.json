@@ -1,0 +1,19 @@
+{
+  "name": "todo-example2",
+  "version": "1.0.0",
+  "description": "skeleton elm example using gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zdebeer",
+  "license": "MIT",
+  "dependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.8.11",
+    "gulp-elm": "*",
+    "gulp-uglify": "*",
+    "gulp-webserver": "^0.9.1"
+  },
+  "devDependencies": {}
+}
