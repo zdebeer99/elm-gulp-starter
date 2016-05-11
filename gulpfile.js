@@ -6,40 +6,40 @@ var gutil  = require('gulp-util');
 var del = require('del')
 var webserver = require('gulp-webserver');
 
+gulp.task('default', ['run']);
+
+gulp.task('run', ['build','watch','server']);
+
+gulp.task('build', ['build:elm','build:files'])
+
+var paths = {
+  src : 'src',
+  out : 'dist',
+}
+
 // elm-make --yes
-gulp.task('init', elm.init);
+gulp.task('build:init', elm.init);
 
-gulp.task('default', ['build', 'files']);
-
-gulp.task('run', ['build','files','watch','server']);
-
-gulp.task('build', ['init'], function(){
-  return gulp.src('src/*.elm')
-    //.pipe(elm.make({filetype: 'html'}))
+gulp.task('build:elm', ['build:init'], function(){
+  return gulp.src(paths.src + '/**/*.elm')
     .pipe(elm.bundle('app.js',{warn:true}))
-    .pipe(gulp.dest('dest/'));
-});
-
-gulp.task('files', function(){
-  return gulp.src('src/index.html')
-  .pipe(gulp.dest('dest/'))
-})
-
-gulp.task('build_release', ['init'], function(){
-  return gulp.src('src/*.elm')
-    .pipe(elm())
     .pipe(uglify())
-    .pipe(gulp.dest('dest/'));
+    .pipe(gulp.dest(paths.out + '/'));
 });
+
+gulp.task('build:files', function(){
+  return gulp.src(paths.src +'/index.html')
+  .pipe(gulp.dest(paths.out +'/'))
+})
 
 
 gulp.task('clean', function(cb){
-    del(["dest/**/*"], {force: true} , cb)
+    del([paths.out +"/**/*"], {force: true} , cb)
 })
 
 //path:'dest/',
 gulp.task('server', function() {
-  gulp.src('dest')
+  gulp.src(paths.out)
     .pipe(webserver({
       livereload: true,
       directoryListing: false,
@@ -49,6 +49,6 @@ gulp.task('server', function() {
 });
 
 gulp.task('watch', function(){
-  gulp.watch(['src/**/*.elm'],['build'])
-  gulp.watch(['src/*.html'],['files'])
+  gulp.watch([paths.src +'/**/*.elm'],['build:elm'])
+  gulp.watch([paths.src +'/*.html'],['build:files'])
 });
