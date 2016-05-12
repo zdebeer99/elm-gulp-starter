@@ -23,6 +23,7 @@ gulp.task('build:init', elm.init);
 gulp.task('build:elm', ['build:init'], function(){
   return gulp.src(paths.src + '/**/*.elm')
     .pipe(elm.bundle('app.js',{warn:true}))
+    .on('error', gutil.log)
     .pipe(uglify())
     .pipe(gulp.dest(paths.out + '/'));
 });
