@@ -4,11 +4,11 @@
     <title>Elm SPA example</title>
   </head>
   <body>
-    <div id="main">Loading...</div>
+    <div id="main"></div>
     <script src="/app.js"></script>
     <script>
     var mountNode = document.getElementById('main');
-    var app = Elm.embed(Elm.Main, mountNode);
+    var app = Elm.Main.embed(mountNode);
     </script>
   </body>
 </html>
