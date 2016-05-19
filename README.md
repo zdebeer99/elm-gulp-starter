@@ -1,4 +1,4 @@
-elm skeleton application using gulp to compile and present a dev server.
+elm 0.17 starter application using gulp to compile and serve application.
 
 ## Feutures
 
@@ -11,27 +11,31 @@ elm skeleton application using gulp to compile and present a dev server.
 ## Getting Started
 
 1. elm and gulp must be installed
-2. clone this repo 'git clone https://github.com/zdebeer99/elm-gulp-starter.git todo-example2'  
-  where 'todo-example2' can be replaced by your application name.
-3. 'npm install'
-4. 'elm package install'
-5. 'gulp run'
+2. clone elm-gulp-starter app into your development folder  
 
+        git clone https://github.com/zdebeer99/elm-gulp-starter.git project-name
+
+  where 'project-name' can be replaced by your application name.
+3. enter 'npm install'
+4. enter 'elm package install'
+5. enter 'gulp run'
 
 **Gulp Commands**
 
-
     gulp
+
 or
 
     gulp run
+
 Compile the appication watch for changes and serve the application.
 
-
     gulp build
+
 Only compile the appication
 
     gulp clean
+
 Clean the distr folder.
 
 

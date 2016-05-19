@@ -1,5 +1,5 @@
 {
-  "name": "todo-example2",
+  "name": "elm-gulp-starter",
   "version": "1.0.0",
   "description": "skeleton elm example using gulp",
   "main": "gulpfile.js",
