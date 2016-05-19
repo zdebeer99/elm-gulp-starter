@@ -19,6 +19,9 @@ elm 0.17 starter application using gulp to compile and serve application.
 3. enter 'npm install'
 4. enter 'elm package install'
 5. enter 'gulp run'
+6. open the url http://localhost:8000 in your browser.
+
+you should see 'hello world' and the browser will update as you code.
 
 **Gulp Commands**
 
