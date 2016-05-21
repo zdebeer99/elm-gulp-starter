@@ -6,9 +6,9 @@ var gutil  = require('gulp-util');
 var del = require('del')
 var webserver = require('gulp-webserver');
 
-gulp.task('default', ['run']);
+gulp.task('default', ['serve']);
 
-gulp.task('run', ['build','watch','server']);
+gulp.task('serve', ['build','watch','server']);
 
 gulp.task('build', ['build:elm','build:files'])
 

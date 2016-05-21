@@ -19,27 +19,22 @@ elm 0.17 starter application using gulp to compile and serve application.
 3. enter 'npm install'
 4. enter 'elm package install'
 5. enter 'gulp run'
-6. open the url http://localhost:8000 in your browser.
+6. open the url [http://localhost:8000]() in your browser.
 
 you should see 'hello world' and the browser will update as you code.
 
 **Gulp Commands**
 
-    gulp
+* serve [default] - Compile the appication watch for changes and serve the application.
+* build - Only compile the appication
+* clean - Clean the distr folder.
 
+Example:
+
+    gulp
 or
 
-    gulp run
-
-Compile the appication watch for changes and serve the application.
-
-    gulp build
-
-Only compile the appication
-
-    gulp clean
-
-Clean the distr folder.
+    gulp serve
 
 
 ## Elm Resources
@@ -49,5 +44,6 @@ Clean the distr folder.
 * http://elm-by-example.org/introduction.html
 * https://github.com/isRuslan/awesome-elm
 * https://github.com/moarwick/elm-webpack-starter
-* https://github.com/maciejsmolinski/elm-playground/blob/master/todo/index.html  
+* https://github.com/maciejsmolinski/elm-playground/blob/master/todo/index.html
+
     Elm basic examples.
